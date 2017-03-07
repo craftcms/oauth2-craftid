@@ -1,0 +1,35 @@
+language: php
+
+sudo: false
+
+cache:
+    directories:
+     - vendor
+     - $HOME/.composer/cache
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - hhvm
+
+matrix:
+  include:
+    - php: 5.6
+      env: 'COMPOSER_FLAGS="--prefer-stable --prefer-lowest"'
+
+before_script:
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source
+  - travis_retry composer require satooshi/php-coveralls --dev
+
+script:
+  - mkdir -p build/logs
+  - vendor/bin/phpunit
+  - vendor/bin/phpcs src --standard=psr2 -sp
+
+after_script:
+  - |
+    if [ -f "build/logs/clover.xml" ]; then
+      vendor/bin/coveralls -v
+    fi
