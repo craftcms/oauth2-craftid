@@ -70,7 +70,7 @@ if (!empty($_GET['error'])) {
         $ownerDetails = $provider->getResourceOwner($token);
 
         // Use these details to create a new profile
-        printf('Hello %s!', $ownerDetails->getFirstName());
+        printf('Hello %s!', $ownerDetails->getName());
 
     } catch (Exception $e) {
 
