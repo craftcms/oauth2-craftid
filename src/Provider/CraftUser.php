@@ -23,57 +23,23 @@ class CraftUser implements ResourceOwnerInterface
     }
 
     /**
-     * Get preferred display name.
+     * Get name.
      *
      * @return string
      */
     public function getName()
     {
-        return $this->response['displayName'];
+        return $this->response['name'];
     }
 
     /**
-     * Get preferred first name.
+     * Get email.
      *
      * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->response['name']['givenName'];
-    }
-
-    /**
-     * Get preferred last name.
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->response['name']['familyName'];
-    }
-
-    /**
-     * Get email address.
-     *
-     * @return string|null
      */
     public function getEmail()
     {
-        if (!empty($this->response['emails'])) {
-            return $this->response['emails'][0]['value'];
-        }
-    }
-
-    /**
-     * Get avatar image URL.
-     *
-     * @return string|null
-     */
-    public function getAvatar()
-    {
-        if (!empty($this->response['image']['url'])) {
-            return $this->response['image']['url'];
-        }
+        return $this->response['email'];
     }
 
     /**
