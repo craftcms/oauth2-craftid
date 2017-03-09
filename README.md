@@ -97,7 +97,10 @@ If needed, you can include an array of scopes when getting the authorization url
 ```
 $authorizationUrl = $provider->getAuthorizationUrl([
     'scope' => [
-        'https://www.craftapis.com/auth/drive',
+        'purchasePlugins',
+        'existingPlugins',
+        'transferPluginLicense',
+        'deassociatePluginLicense',
     ]
 ]);
 header('Location: ' . $authorizationUrl);
