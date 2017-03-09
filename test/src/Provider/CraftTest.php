@@ -37,7 +37,7 @@ class CraftTest extends \PHPUnit_Framework_TestCase
         $this->assertContains('existingPlugins', $query['scope']);
         $this->assertContains('transferPluginLicense', $query['scope']);
         $this->assertContains('deassociatePluginLicense', $query['scope']);
-        
+
         $this->assertAttributeNotEmpty('state', $this->provider);
     }
 
