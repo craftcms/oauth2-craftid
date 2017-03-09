@@ -37,7 +37,10 @@ class Craft extends AbstractProvider
     protected function getDefaultScopes()
     {
         return [
-            'account',
+            'purchasePlugins',
+            'existingPlugins',
+            'transferPluginLicense',
+            'deassociatePluginLicense',
         ];
     }
 
