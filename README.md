@@ -31,7 +31,7 @@ composer require league/oauth2-craftid
 ### Authorization Code Flow
 
 ```php
-$provider = new craftcms\oauth2\client\provider\CraftId([
+$provider = new \craftcms\oauth2\client\provider\CraftId([
     'clientId'     => '{craft-app-id}',
     'clientSecret' => '{craft-app-secret}',
     'redirectUri'  => 'https://example.com/callback-url',
