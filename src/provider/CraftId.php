@@ -1,13 +1,14 @@
 <?php
 
-namespace League\OAuth2\Client\Provider;
+namespace craftcms\oauth2\client\provider;
 
+use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
-class Craft extends AbstractProvider
+class CraftId extends AbstractProvider
 {
     use BearerAuthorizationTrait;
 
@@ -66,6 +67,6 @@ class Craft extends AbstractProvider
 
     protected function createResourceOwner(array $response, AccessToken $token)
     {
-        return new CraftUser($response);
+        return new CraftIdUser($response);
     }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "league/oauth2-craft",
+  "name": "craftcms/oauth2-craftid",
   "description": "Craft OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
   "version": "1.0.0",
   "license": "MIT",
@@ -30,12 +30,12 @@
   },
   "autoload": {
     "psr-4": {
-      "League\\OAuth2\\Client\\": "src/"
+      "craftcms\\oauth2\\client\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "League\\OAuth2\\Client\\Test\\": "tests/src/"
+      "craftcms\\oauth2\\client\\test\\": "tests/src/"
     }
   }
 }

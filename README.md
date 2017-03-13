@@ -23,7 +23,7 @@ The following versions of PHP are supported.
 To install, use composer:
 
 ```
-composer require league/oauth2-craft
+composer require league/oauth2-craftid
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ composer require league/oauth2-craft
 ### Authorization Code Flow
 
 ```php
-$provider = new League\OAuth2\Client\Provider\Craft([
+$provider = new craftcms\oauth2\client\provider\CraftId([
     'clientId'     => '{craft-app-id}',
     'clientSecret' => '{craft-app-secret}',
     'redirectUri'  => 'https://example.com/callback-url',
@@ -115,15 +115,15 @@ $ ./vendor/bin/phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/pixelandtonic/oauth2-craft/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/pixelandtonic/oauth2-craftid/blob/master/CONTRIBUTING.md) for details.
 
 
 ## Credits
 
 - [Pixel & Tonic](https://pixelandtonic.com/)
-- [All Contributors](https://github.com/pixelandtonic/oauth2-craft/contributors)
+- [All Contributors](https://github.com/pixelandtonic/oauth2-craftid/contributors)
 
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/pixelandtonic/oauth2-craft/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/pixelandtonic/oauth2-craftid/blob/master/LICENSE) for more information.

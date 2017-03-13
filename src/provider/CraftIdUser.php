@@ -1,8 +1,10 @@
 <?php
 
-namespace League\OAuth2\Client\Provider;
+namespace craftcms\oauth2\client\provider;
 
-class CraftUser implements ResourceOwnerInterface
+use League\OAuth2\Client\Provider\ResourceOwnerInterface;
+
+class CraftIdUser implements ResourceOwnerInterface
 {
     /**
      * @var array

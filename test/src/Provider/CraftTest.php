@@ -1,19 +1,19 @@
 <?php
 
-namespace League\OAuth2\Client\Test\Provider;
+namespace craftcms\oauth2\client\test\provider;
 
+use PHPUnit_Framework_TestCase;
 use Eloquent\Phony\Phpunit\Phony;
-use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
-use League\OAuth2\Client\Provider\Craft as CraftProvider;
+use craftcms\oauth2\client\provider\CraftId;
 use League\OAuth2\Client\Token\AccessToken;
 
-class CraftTest extends \PHPUnit_Framework_TestCase
+class CraftTest extends PHPUnit_Framework_TestCase
 {
     protected $provider;
 
     protected function setUp()
     {
-        $this->provider = new CraftProvider([
+        $this->provider = new CraftId([
             'clientId' => 'mock_client_id',
             'clientSecret' => 'mock_secret',
             'redirectUri' => 'none',
@@ -62,7 +62,7 @@ class CraftTest extends \PHPUnit_Framework_TestCase
         // Mock
         $response = json_decode('{"id": "12345","name": "mock_name", "email": "mock_email", "purchasedPlugins": []}', true);
         $token = $this->mockAccessToken();
-        $provider = Phony::partialMock(CraftProvider::class);
+        $provider = Phony::partialMock(CraftId::class);
         $provider->fetchResourceOwnerDetails->returns($response);
         $craft = $provider->get();
         // Execute
