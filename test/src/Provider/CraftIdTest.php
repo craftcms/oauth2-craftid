@@ -2,12 +2,13 @@
 
 namespace craftcms\oauth2\client\test\provider;
 
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use PHPUnit_Framework_TestCase;
 use Eloquent\Phony\Phpunit\Phony;
 use craftcms\oauth2\client\provider\CraftId;
 use League\OAuth2\Client\Token\AccessToken;
 
-class CraftTest extends PHPUnit_Framework_TestCase
+class CraftIdTest extends PHPUnit_Framework_TestCase
 {
     protected $provider;
 
@@ -80,6 +81,58 @@ class CraftTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('name', $user);
         $this->assertArrayHasKey('email', $user);
         $this->assertArrayHasKey('purchasedPlugins', $user);
+    }
+
+    public function testErrorResponse()
+    {
+        // Mock
+        $error_json = '{"error": {"code": 400, "message": "I am an error"}}';
+        $response = Phony::mock('GuzzleHttp\Psr7\Response');
+        $response->getHeader->returns(['application/json']);
+        $response->getBody->returns($error_json);
+        $provider = Phony::partialMock(CraftId::class);
+        $provider->getResponse->returns($response);
+        $craftId = $provider->get();
+        $token = $this->mockAccessToken();
+
+        // Expect
+        $this->expectException(IdentityProviderException::class);
+
+        // Execute
+        $user = $craftId->getResourceOwner($token);
+        
+        // Verify
+        Phony::inOrder(
+            $provider->getResponse->calledWith($this->instanceOf('GuzzleHttp\Psr7\Request')),
+            $response->getHeader->called(),
+            $response->getBody->called()
+        );
+    }
+
+    public function testEmptyErrorResponse()
+    {
+        // Mock
+        $error_json = '{}';
+        $response = Phony::mock('GuzzleHttp\Psr7\Response');
+        $response->getHeader->returns(['application/json']);
+        $response->getBody->returns($error_json);
+        $provider = Phony::partialMock(CraftId::class);
+        $provider->getResponse->returns($response);
+        $craftId = $provider->get();
+        $token = $this->mockAccessToken();
+
+        // Expect
+        $this->expectException(IdentityProviderException::class);
+
+        // Execute
+        $user = $craftId->getResourceOwner($token);
+
+        // Verify
+        Phony::inOrder(
+            $provider->getResponse->calledWith($this->instanceOf('GuzzleHttp\Psr7\Request')),
+            $response->getHeader->called(),
+            $response->getBody->called()
+        );
     }
 
     /**
