@@ -100,7 +100,7 @@ class CraftIdTest extends PHPUnit_Framework_TestCase
 
         // Execute
         $user = $craftId->getResourceOwner($token);
-        
+
         // Verify
         Phony::inOrder(
             $provider->getResponse->calledWith($this->instanceOf('GuzzleHttp\Psr7\Request')),
