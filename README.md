@@ -1,6 +1,6 @@
-# Craft Provider for OAuth 2.0 Client
+# Craft ID Provider for OAuth 2.0 Client
 
-This package provides Craft OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
+This package provides Craft ID OAuth 2.0 support for the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client).
 
 This package is compliant with [PSR-1][], [PSR-2][] and [PSR-4][]. If you notice compliance oversights, please send
 a patch via pull request.
