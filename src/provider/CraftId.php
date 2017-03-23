@@ -27,7 +27,7 @@ class CraftId extends AbstractProvider
 
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'http://craftcms.dev/oauth/token';
+        return 'http://craftcms.dev/oauth/accessToken';
     }
 
     public function getResourceOwnerDetailsUrl(AccessToken $token)
