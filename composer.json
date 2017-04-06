@@ -37,5 +37,11 @@
     "psr-4": {
       "craftcms\\oauth2\\client\\test\\": "tests/src/"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
 }
