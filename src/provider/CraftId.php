@@ -22,17 +22,17 @@ class CraftId extends AbstractProvider
 
     public function getBaseAuthorizationUrl()
     {
-        return 'http://craftcms.dev/oauth/authorize';
+        return 'https://craftid.dev/oauth/authorize';
     }
 
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'http://craftcms.dev/oauth/access-token';
+        return 'https://craftid.dev/oauth/access-token';
     }
 
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return 'http://craftcms.dev/api/account';
+        return 'https://craftid.dev/api/account';
     }
 
     protected function getDefaultScopes()
