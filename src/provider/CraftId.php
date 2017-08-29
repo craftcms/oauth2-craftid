@@ -13,26 +13,24 @@ class CraftId extends AbstractProvider
     use BearerAuthorizationTrait;
 
     const ACCESS_TOKEN_RESOURCE_OWNER_ID = 'id';
+    
+    public $oauthEndpointUrl = 'https://api.craftcms.com/oauth';
 
-    /**
-     * @var array Additional fields to be requested from the user profile.
-     *            If set, these values will be included with the defaults.
-     */
-    protected $userFields = [];
+    public $apiEndpointUrl = 'https://api.craftcms.com';
 
     public function getBaseAuthorizationUrl()
     {
-        return 'https://craftid.dev/oauth/authorize';
+        return $this->oauthEndpointUrl.'/authorize';
     }
 
     public function getBaseAccessTokenUrl(array $params)
     {
-        return 'https://craftid.dev/oauth/access-token';
+        return $this->oauthEndpointUrl.'/access-token';
     }
 
     public function getResourceOwnerDetailsUrl(AccessToken $token)
     {
-        return 'https://craftid.dev/api/account';
+        return $this->apiEndpointUrl.'/api/account';
     }
 
     protected function getDefaultScopes()
