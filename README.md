@@ -23,7 +23,7 @@ The following versions of PHP are supported.
 To install, use composer:
 
 ```
-composer require league/oauth2-craftid
+composer require craftcms/oauth2-craftid
 ```
 
 ## Usage
