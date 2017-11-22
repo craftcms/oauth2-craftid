@@ -1,7 +1,6 @@
 {
   "name": "craftcms/oauth2-craftid",
   "description": "Craft OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
-  "version": "1.0.0",
   "license": "MIT",
   "authors": [
     {
@@ -16,9 +15,9 @@
     "authorization",
     "authentication",
     "cms",
-    "craftcms"
+    "craftcms",
+    "craftid"
   ],
-  "minimum-stability": "beta",
   "require": {
     "league/oauth2-client": "~2.2.1"
   },
@@ -36,11 +35,5 @@
     "psr-4": {
       "craftcms\\oauth2\\client\\test\\": "tests/src/"
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ]
+  }
 }
