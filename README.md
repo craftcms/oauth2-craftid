@@ -113,17 +113,12 @@ exit;
 $ ./vendor/bin/phpunit
 ```
 
-## Contributing
-
-Please see [CONTRIBUTING](https://github.com/pixelandtonic/oauth2-craftid/blob/master/CONTRIBUTING.md) for details.
-
-
 ## Credits
 
 - [Pixel & Tonic](https://pixelandtonic.com/)
-- [All Contributors](https://github.com/pixelandtonic/oauth2-craftid/contributors)
+- [All Contributors](https://github.com/craftcms/oauth2-craftid/contributors)
 
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/pixelandtonic/oauth2-craftid/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/craftcms/oauth2-craftid/blob/master/LICENSE) for more information.
