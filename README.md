@@ -121,4 +121,4 @@ $ ./vendor/bin/phpunit
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/craftcms/oauth2-craftid/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/craftcms/oauth2-craftid/blob/master/LICENSE.md) for more information.
