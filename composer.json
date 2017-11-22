@@ -19,7 +19,7 @@
     "craftid"
   ],
   "require": {
-    "league/oauth2-client": "~2.2.1"
+    "league/oauth2-client": "^2.2.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.0",
